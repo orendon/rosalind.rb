@@ -19,7 +19,10 @@ class Nucleotide
   end
 
   def method_missing(name, *args, &block)
-    return @count[name] if NUCLEOBASES.keys.include?(name)
+    if NUCLEOBASES.keys.include?(name)
+      perform_count unless @count[name]
+      return @count[name]
+    end
     super
   end
 
