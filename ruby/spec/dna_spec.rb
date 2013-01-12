@@ -5,10 +5,16 @@ require './lib/dna'
 
 class TestNucleotide < MiniTest::Unit::TestCase
 
-  def test_that_counts_nucleobases
+  def setup
     dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-    nucleotide = Nucleotide.new(dna)
+    @nucleotide = Nucleotide.new(dna)
+  end
 
-    assert_equal "20 12 17 21", nucleotide.nucleobases_count
+  def test_that_counts_nucleobases
+    assert_equal "20 12 17 21", @nucleotide.nucleobases_count
+  end
+
+  def test_that_calculate_dna_legth
+    assert @nucleotide.nt == 70
   end
 end

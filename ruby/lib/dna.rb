@@ -14,6 +14,10 @@ class Nucleotide
     "#{adenine} #{cytosine} #{guanine} #{thymine}"
   end
 
+  def nt
+    @dna.size
+  end
+
   def method_missing(name, *args, &block)
     return @count[name] if NUCLEOBASES.keys.include?(name)
     super
