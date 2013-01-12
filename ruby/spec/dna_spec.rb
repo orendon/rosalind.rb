@@ -17,4 +17,11 @@ class TestNucleotide < MiniTest::Unit::TestCase
   def test_that_calculate_dna_legth
     assert @nucleotide.nt == 70
   end
+
+  def test_that_counts_the_rigth_nucleobase
+    assert_equal 20, @nucleotide.adenine
+    assert_equal 12, @nucleotide.cytosine
+    assert_equal 17, @nucleotide.guanine
+    assert_equal 21, @nucleotide.thymine
+  end
 end
