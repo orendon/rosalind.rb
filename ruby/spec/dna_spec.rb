@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/dna'
+require 'dna'
 
 # Problem: http://rosalind.info/problems/dna/
 
