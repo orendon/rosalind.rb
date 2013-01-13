@@ -9,8 +9,7 @@ class Nucleotide
     @count = {}
   end
 
-  def nucleobases_count
-    perform_count
+  def nucleobases_summary
     "#{adenine} #{cytosine} #{guanine} #{thymine}"
   end
 
@@ -19,16 +18,18 @@ class Nucleotide
   end
 
   def method_missing(name, *args, &block)
-    if NUCLEOBASES.keys.include?(name)
-      perform_count unless @count[name]
-      return @count[name]
-    end
+    return count_for(name) if NUCLEOBASES.keys.include?(name)
     super
   end
 
   private
 
+  def count_for(nucleobase)
+    perform_count unless @count[nucleobase]
+    @count[nucleobase]
+  end
+
   def perform_count
-    NUCLEOBASES.each { |k, v| @count[k] = @dna.count(v) }
+    NUCLEOBASES.each { |k,v| @count[k] = @dna.count(v) }
   end
 end
