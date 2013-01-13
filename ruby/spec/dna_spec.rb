@@ -3,7 +3,7 @@ require 'dna'
 
 # Problem: http://rosalind.info/problems/dna/
 
-class TestNucleotide < MiniTest::Unit::TestCase
+class TestDNA < MiniTest::Unit::TestCase
 
   def setup
     dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
