@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'dna'
 
-# Problem: http://rosalind.info/problems/dna/
+# Problem: http://rosalind.info/problems/rna/
 
 class TestRNA < MiniTest::Unit::TestCase
 
