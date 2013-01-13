@@ -2,5 +2,6 @@ require 'rake'
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.pattern = 'spec/**/*_spec.rb'
+  t.libs = ["ruby/lib"]
+  t.pattern = 'ruby/spec/**/*_spec.rb'
 end
